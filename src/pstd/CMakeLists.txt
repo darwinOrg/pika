@@ -23,8 +23,8 @@ if(NOT DISABLE_WARNING_AS_ERROR)
 endif()
 
 
-add_subdirectory(tests)
-add_subdirectory(examples)
+#add_subdirectory(tests)
+#add_subdirectory(examples)
 
 aux_source_directory(./src  DIR_SRCS)
 

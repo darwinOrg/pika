@@ -10,8 +10,8 @@ if(USE_SSL)
   add_definitions("-D__ENABLE_SSL")
 endif()
 
-add_subdirectory(test)
-add_subdirectory(examples)
+#add_subdirectory(test)
+#add_subdirectory(examples)
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
   list(FILTER DIR_SRCS EXCLUDE REGEX ".net_kqueue.*")

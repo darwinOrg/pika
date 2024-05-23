@@ -61,7 +61,7 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "Linux")
      set(CMAKE_EXE_LINKER_FLAGS "-stdlib=libc++ -fuse-ld=lld -lc++ -lc++abi ${CMAKE_EXE_LINKER_FLAGS}")
      set(CMAKE_CXX_FLAGS "-stdlib=libc++ -pthread ${CMAKE_CXX_FLAGS}")
    elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-     set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+#     set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
      set(CMAKE_CXX_FLAGS "-pthread -Wl,--no-as-needed -ldl")
    endif()
    add_definitions(-DOS_LINUX)
@@ -89,7 +89,7 @@ set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} ${STAGED_INSTALL_PREFIX})
 
 execute_process(COMMAND sh ${CMAKE_UTILS_DIR}/Get_OS_Version.sh
   OUTPUT_VARIABLE OS_VERSION)
-
+set(OS_VERSION "CentOS")
 message(STATUS "${PROJECT_NAME} staged install: ${STAGED_INSTALL_PREFIX}")
 message(STATUS "Current platform: ${OS_VERSION} ")
 cmake_host_system_information(RESULT CPU_CORE QUERY NUMBER_OF_LOGICAL_CORES)
